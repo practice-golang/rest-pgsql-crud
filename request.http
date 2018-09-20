@@ -1,0 +1,37 @@
+### Not work
+GET http://localhost:1323
+
+### DB Init
+GET http://localhost:1323/dbinit
+
+### Index
+GET http://localhost:1323/books
+
+### Create
+POST http://localhost:1323/books
+Content-Type: application/x-www-form-urlencoded
+
+title=La fille de brooklyn
+&author=Guillaume Musso
+
+### Read
+GET http://localhost:1323/books/34
+
+### Update
+PUT http://localhost:1323/books
+content-type: application/json
+
+{
+    "id": 34,
+    "title": "Jane eyre",
+    "author": "Charlotte Brontë"
+}
+
+### Delete - token not yet use & work
+DELETE http://localhost:1323/books/37
+content-type: application/json
+
+{
+    "user": "uniqueman",
+    "token": "bus token flight token tube token taxi token"
+}
