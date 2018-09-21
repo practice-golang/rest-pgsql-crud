@@ -27,15 +27,15 @@ func index(c echo.Context) error {
 
 func create(c echo.Context) error {
 	book := new(dbbooks.Book)
-	book.Title = c.FormValue("title")
-	book.Author = c.FormValue("author")
+	book.Title = c.FormValue("Title")
+	book.Author = c.FormValue("Author")
 
 	dbbooks.InsertData(book, table)
 	return c.JSON(http.StatusOK, &ResultResponse{Message: "New item creation done"})
 }
 
 func read(c echo.Context) error {
-	_id, _ := strconv.Atoi(c.Param("id"))
+	_id, _ := strconv.Atoi(c.Param("ID"))
 	return c.JSON(http.StatusOK, dbbooks.SelectData(_id, table))
 }
 
@@ -57,7 +57,7 @@ func delete(c echo.Context) error {
 	// 	panic(e.Error())
 	// }
 
-	_id, _ := strconv.Atoi(c.Param("id"))
+	_id, _ := strconv.Atoi(c.Param("ID"))
 
 	fmt.Println(_id)
 

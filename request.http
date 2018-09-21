@@ -22,9 +22,9 @@ PUT http://localhost:1323/books
 content-type: application/json
 
 {
-    "id": 34,
-    "title": "Jane eyre",
-    "author": "Charlotte Brontë"
+    "ID": 34,
+    "Title": "Jane eyre",
+    "Author": "Charlotte Brontë"
 }
 
 ### Delete - token not yet use & work
